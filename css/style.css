@@ -1,0 +1,89 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 7% 93%;
+  height: 100%;
+  background-color: #fff;
+  color: #444;
+  transition: all 300ms ease-in-out;
+}
+
+.header {
+  display: flex;
+  grid-area: header;
+  align-items: center;
+  margin: 0 auto;
+  width: 800px;
+  padding: 1rem;
+}
+
+.dark-mode-toggler {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  background-color: #ccc;
+  border: 2px solid #bbb;
+  border-radius: 20px;
+  transition: all 300ms ease-in-out;
+}
+
+.dark-mode-toggler div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 2px;
+  left: 2px;
+  background-color: deeppink;
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+}
+
+#dark-mode-input {
+  display: none;
+}
+
+#dark-mode-input:checked ~ .grid {
+  background-color: #444;
+  color: #fff;
+  transition: all 300ms ease-in-out;
+}
+
+#dark-mode-input:checked ~ .dark-mode-toggler {
+  background-color: deeppink;
+}  
+
+#dark-mode-input:checked ~ .dark-mode-toggler div {
+  background-color: #ccc;
+  left: 21px;
+}
+
+.main {
+  grid-area: main;
+  width: 800px;
+  margin: 0 auto; /* top and bottom - sides */
+  padding: 1rem;
+}
+
+.main__title {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.main__text,
+.main__text p {
+  padding: 1rem 0;
+  font-size: 1rem;
+}
